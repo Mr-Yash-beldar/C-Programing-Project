@@ -323,6 +323,31 @@ void program()
 				}
 				// getch();
 			}
+            else if (eo == 2)
+			{
+				int start, end;
+				printf("\t\t\t**Enter the start**\n");
+				printf("\t\t\t");
+				scanf("%d", &start);
+				printf("\t\t\t**Enter the End**\n");
+				printf("\t\t\t");
+				scanf("%d", &end);
+				// clrscr();
+				printf("\n\v");
+				printf("\t\tThe Strong numbers from %d to %d are as follow: /n", start, end);
+				printf("\t\t\t\t=>");
+				printStrong(start, end);
+				// getch();
+			}
+			else
+			{
+				// clrscr();
+				printf("\t\t\t\t\t**--Invalid Input**--\n");
+				// getch();
+			}
+			end();
+			// getch();
+		}
     }
 
     else if (menu == 2)
