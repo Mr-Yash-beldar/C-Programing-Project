@@ -8,6 +8,12 @@ int Prime(int);
 void printPrime(int, int);
 int Armstrong(int);
 void printArmstrong(int, int);
+int Perfect(int);
+void printPerfect(int, int);
+int Strong(int);
+void printStrong(int, int);
+int Pallindrome(int);
+void printPallindrome(int, int);
 void end();
 void mend();
 void main()
@@ -228,6 +234,38 @@ void program()
             end();
             // getch();
         }
+        /*-----Perfect Numbers---*/
+		/*-----Perfect Block---*/
+		else if (check == 4)
+		{
+			int eo;
+			printf("\t\t--**Enter 1: To check Number is Perfect or Not**--\n");
+			printf("\t\t--**Enter 2: To print all 'Perfect Number' in given range**--\n");
+			printf("\t\t\t\t");
+			scanf("%d", &eo);
+			// clrscr();
+			printf("\n\v");
+			if (eo == 1)
+			{
+				int number, checker;
+				printf("\t\t**Enter the number to check it is Perfect or Not**\n");
+				printf("\t\t\t\t");
+				scanf("%d", &number);
+				// clrscr();
+				printf("\n\v");
+				checker = Perfect(number);
+				if (checker == 1)
+				{
+					printf("\n\v");
+					printf("\t\t\t=>The number %d is Perfect Number\n", number);
+				}
+				else
+				{
+					printf("\n\v");
+					printf("\t\t\t=>The number %d is Not Perfect Number\n", number);
+				}
+				// getch();
+			}
     }
 
 else if (menu == 2)
@@ -274,6 +312,135 @@ void printOdd(int start, int end)
         if (checker == 0)
             printf("%d, ", i);
     }
+}
+int Armstrong(int num)
+{
+	int temp = num;
+	int sum = 0, rem;
+	while (temp != 0)
+	{
+		rem = temp % 10;
+		sum += rem * rem * rem;
+		temp /= 10;
+	}
+	if (sum == num)
+		return 1;
+	else
+		return 0;
+}
+void printArmstrong(int start, int end)
+{
+	while (start <= end)
+	{
+		if (Armstrong(start))
+			printf(",%d ", start);
+		start++;
+	}
+}
+
+int Prime(int num)
+{
+	int i;
+	for (i = 2; i <= num / 2; i++)
+	{
+		if (num % i == 0)
+			return 0;
+	}
+	return 1;
+}
+void printPrime(int start, int end)
+{
+	while (start <= end)
+	{
+		if (Prime(start))
+			printf("%d, ", start);
+		start++;
+	}
+}
+int Perfect(int num)
+{
+	int i, sum = 0;
+
+	for (i = 1; i <= num / 2; i++)
+	{
+		if (num % i == 0)
+		{
+			sum += i;
+		}
+	}
+
+	if (sum == num && num > 0)
+		return 1;
+	else
+		return 0;
+}
+void printPerfect(int start, int end)
+{
+	while (start <= end)
+	{
+		if (Perfect(start))
+			printf("%d, ", start);
+		start++;
+	}
+}
+int Strong(int num)
+{
+	int i, originalNum, lastDigit, sum;
+	long fact;
+
+	originalNum = num;
+
+	sum = 0;
+
+	while (num > 0)
+	{
+		lastDigit = num % 10;
+		fact = 1;
+		for (i = 1; i <= lastDigit; i++)
+		{
+			fact = fact * i;
+		}
+
+		sum = sum + fact;
+		num = num / 10;
+	}
+
+	if (sum == originalNum)
+		return 1;
+	else
+		return 0;
+}
+void printStrong(int start, int end)
+{
+	while (start <= end)
+	{
+		if (Strong(start))
+			printf("%d, ", start);
+		start++;
+	}
+}
+int Pallindrome(int num)
+{
+	int n, rev = 0;
+	num = n;
+	while (n != 0)
+	{
+		rev = (rev * 10) + (n % 10);
+		n /= 10;
+	}
+	if (rev == num)
+		return 1;
+	else
+		return 0;
+}
+void printPallindrome(int start, int end)
+{
+	while (start <= end)
+	{
+		if (Pallindrome(start))
+			printf("%d, ", start);
+		start++;
+	}
 }
 void end()
 {
