@@ -6,6 +6,7 @@ void printEven(int, int);
 void printOdd(int, int);
 int Prime(int);
 void printPrime(int, int);
+int Armstrong(int);
 void end();
 void mend();
 void main()
@@ -169,6 +170,38 @@ void program()
             end();
             // getch();
         }
+        /*----Armstrong Number---
+		   ----Armstrong Block-----*/
+		else if (check == 3)
+		{
+			int eo;
+			printf("\t\t--**Enter 1: To check Number is Armstrong or Not**--\n");
+			printf("\t\t--**Enter 2: To print all 'Armstrong Number' in given range**--\n");
+			printf("\t\t\t\t");
+			scanf("%d", &eo);
+			// clrscr();
+			printf("\n\v");
+			if (eo == 1)
+			{
+				int number, checker;
+				printf("\t\t**Enter the number to check it is Armstrong or Not**\n");
+				printf("\t\t\t\t");
+				scanf("%d", &number);
+				// clrscr();
+				printf("\n\v");
+				checker = Armstrong(number);
+				if (checker == 1)
+				{
+					printf("\n\v");
+					printf("\t\t\t=>The number %d is Armstrong Number\n", number);
+				}
+				else
+				{
+					printf("\n\v");
+					printf("\t\t\t=>The number %d is Not Armstrong Number\n", number);
+				}
+				// getch();
+			}
     }
 }
 else if (menu == 2)
