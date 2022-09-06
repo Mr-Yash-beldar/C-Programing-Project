@@ -4,6 +4,9 @@ void program();
 int Even(int);
 void printEven(int, int);
 void printOdd(int, int);
+int Prime(int);
+void end();
+void mend();
 void main()
 {
     program();
@@ -64,7 +67,7 @@ void program()
                     printf("\n\v");
                     printf("\t\t\t=>The number %d is Odd Number\n", number);
                 }
-                // end();
+                end();
             }
             else if (eo == 2)
             {
@@ -97,8 +100,62 @@ void program()
                 printf("\t\t\t\t=>");
                 printOdd(start, end);
             }
+            	else
+			{
+				// clrscr();
+				printf("\t\t\t\t\t**--Invalid Input**--\n");
+				end();
+				// getch();
+			}
+			end();
+			
+		}
+		/*-----Prime Number----
+        		-------Prime Block---*/
+		else if (check == 2)
+		{
+			int eo;
+			printf("\t\t--**Enter 1: To check Number is Prime or Not**--\n");
+			printf("\t\t--**Enter 2: To print all 'Prime Number' in given range**--\n");
+			printf("\t\t\t\t");
+			scanf("%d", &eo);
+			// clrscr();
+			printf("\n\v");
+			if (eo == 1)
+			{
+				int number, checker;
+				printf("\t\t**Enter the number to check it is Prime or Not**\n");
+				printf("\t\t\t\t");
+				scanf("%d", &number);
+				// clrscr();
+				printf("\n\v");
+				checker = Prime(number);
+				if (checker == 1)
+				{
+					printf("\n\v");
+					printf("\t\t\t=>The number %d is Prime Number\n", number);
+				}
+				else
+				{
+					printf("\n\v");
+					printf("\t\t\t=>The number %d is Not Prime Number\n", number);
+				}
+				// end();
+				// getch();
+			}
         }
     }
+    	else if (menu == 2)
+	{
+		end();
+	}
+	else
+	{
+		printf("\n\v");
+		printf("\t\t\t\t--**Invalid Input**--");
+		end();
+		// getch();
+	}
 }
 
 /*
@@ -132,4 +189,26 @@ void printOdd(int start, int end)
         if (checker == 0)
             printf("%d, ", i);
     }
+}
+void end()
+{    char ch;
+	printf("\n\v");
+	printf("\t\t--**Enter Y/y to Continue or N/n to Quit the Program**--");
+	printf("\t\t\t\t=>");
+	scanf("%c ", &ch);
+	// clrscr();
+	if (ch == 'y' && ch == 'Y')
+	{
+		program();
+		// getch();
+	}
+	else if (ch == 'n' && ch == 'N')
+	{
+		mend();
+	}
+}
+void mend()
+{
+	printf("\t\t\t\t\t<=---xxxxxxxx****Quit****xxxxxxxx---=>");
+	// getch();
 }
