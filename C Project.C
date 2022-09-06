@@ -7,6 +7,7 @@ void printOdd(int, int);
 int Prime(int);
 void printPrime(int, int);
 int Armstrong(int);
+void printArmstrong(int, int);
 void end();
 void mend();
 void main()
@@ -171,39 +172,64 @@ void program()
             // getch();
         }
         /*----Armstrong Number---
-		   ----Armstrong Block-----*/
-		else if (check == 3)
-		{
-			int eo;
-			printf("\t\t--**Enter 1: To check Number is Armstrong or Not**--\n");
-			printf("\t\t--**Enter 2: To print all 'Armstrong Number' in given range**--\n");
-			printf("\t\t\t\t");
-			scanf("%d", &eo);
-			// clrscr();
-			printf("\n\v");
-			if (eo == 1)
-			{
-				int number, checker;
-				printf("\t\t**Enter the number to check it is Armstrong or Not**\n");
-				printf("\t\t\t\t");
-				scanf("%d", &number);
-				// clrscr();
-				printf("\n\v");
-				checker = Armstrong(number);
-				if (checker == 1)
-				{
-					printf("\n\v");
-					printf("\t\t\t=>The number %d is Armstrong Number\n", number);
-				}
-				else
-				{
-					printf("\n\v");
-					printf("\t\t\t=>The number %d is Not Armstrong Number\n", number);
-				}
-				// getch();
-			}
+           ----Armstrong Block-----*/
+        else if (check == 3)
+        {
+            int eo;
+            printf("\t\t--**Enter 1: To check Number is Armstrong or Not**--\n");
+            printf("\t\t--**Enter 2: To print all 'Armstrong Number' in given range**--\n");
+            printf("\t\t\t\t");
+            scanf("%d", &eo);
+            // clrscr();
+            printf("\n\v");
+            if (eo == 1)
+            {
+                int number, checker;
+                printf("\t\t**Enter the number to check it is Armstrong or Not**\n");
+                printf("\t\t\t\t");
+                scanf("%d", &number);
+                // clrscr();
+                printf("\n\v");
+                checker = Armstrong(number);
+                if (checker == 1)
+                {
+                    printf("\n\v");
+                    printf("\t\t\t=>The number %d is Armstrong Number\n", number);
+                }
+                else
+                {
+                    printf("\n\v");
+                    printf("\t\t\t=>The number %d is Not Armstrong Number\n", number);
+                }
+                // getch();
+            }
+            else if (eo == 2)
+            {
+                int start, end;
+                printf("\t\t\t**Enter the start**\n");
+                printf("\t\t\t");
+                scanf("%d", &start);
+                printf("\t\t\t**Enter the End**\n");
+                printf("\t\t\t");
+                scanf("%d", &end);
+                // clrscr();
+                printf("\n\v");
+                printf("\t\tThe Armstrong numbers from %d to %d are as follow: /n", start, end);
+                printf("\t\t\t\t=>");
+                printArmstrong(start, end);
+                // getch();
+            }
+            else
+            {
+                // clrscr();
+                printf("\t\t\t\t\t**--Invalid Input**--\n");
+                // getch();
+            }
+            end();
+            // getch();
+        }
     }
-}
+
 else if (menu == 2)
 {
     end();
