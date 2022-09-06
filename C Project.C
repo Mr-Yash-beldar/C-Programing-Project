@@ -291,6 +291,38 @@ void program()
             end();
             // getch();
         }
+        /*-----Strong Numbers---*/
+		/*-----Strong Block---*/
+		else if (check == 5)
+		{
+			int eo;
+			printf("\t\t--**Enter 1: To check Number is Strong or Not**--\n");
+			printf("\t\t--**Enter 2: To print all 'Strong Number' in given range**--\n");
+			printf("\t\t\t\t");
+			scanf("%d", &eo);
+			// clrscr();
+			printf("\n\v");
+			if (eo == 1)
+			{
+				int number, checker;
+				printf("\t\t**Enter the number to check it is Strong or Not**\n");
+				printf("\t\t\t\t");
+				scanf("%d", &number);
+				// clrscr();
+				printf("\n\v");
+				checker = Strong(number);
+				if (checker == 1)
+				{
+					printf("\n\v");
+					printf("\t\t\t=>The number %d is Strong Number\n", number);
+				}
+				else
+				{
+					printf("\n\v");
+					printf("\t\t\t=>The number %d is Not Strong Number\n", number);
+				}
+				// getch();
+			}
     }
 
     else if (menu == 2)
