@@ -348,6 +348,38 @@ void program()
 			end();
 			// getch();
 		}
+        /*-----Pallindrome Numbers---*/
+		/*-----Pallindrome Block---*/
+		else if (check == 6)
+		{
+			int eo;
+			printf("\t\t--**Enter 1: To check Number is Pallindrome or Not**--\n");
+			printf("\t\t--**Enter 2: To print all 'Pallindrome Number' in given range**--\n");
+			printf("\t\t\t\t");
+			scanf("%d", &eo);
+			// clrscr();
+			printf("\n\v");
+			if (eo == 1)
+			{
+				int number, checker;
+				printf("\t\t**Enter the number to check it is Pallindrome or Not**\n");
+				printf("\t\t\t\t");
+				scanf("%d", &number);
+				// clrscr();
+				printf("\n\v");
+				checker = Pallindrome(number);
+				if (checker == 1)
+				{
+					printf("\n\v");
+					printf("\t\t\t=>The number %d is Pallindrome Number\n", number);
+				}
+				else
+				{
+					printf("\n\v");
+					printf("\t\t\t=>The number %d is Not Pallindrome Number\n", number);
+				}
+				// getch();
+			}
     }
 
     else if (menu == 2)
