@@ -66,38 +66,70 @@ void program()
                 }
                 // end();
             }
+            else if (eo == 2)
+            {
+                int start, end;
+                printf("\t\t\t**Enter the start**\n");
+                printf("\t\t\t");
+                scanf("%d", &start);
+                printf("\t\t\t**Enter the End**\n");
+                printf("\t\t\t");
+                scanf("%d", &end);
+                // clrscr();
+                printf("\n\v");
+                printf("\t\tThe Even number from %d to %d are as follow: /n", start, end);
+                printf("\t\t\t\t=>");
+                printEven(start, end);
+            }
+
+            else if (eo == 3)
+            {
+                int start, end;
+                printf("\t\t\t**Enter the start**\n");
+                printf("\t\t\t");
+                scanf("%d", &start);
+                printf("\t\t\t**Enter the End**\n");
+                printf("\t\t\t");
+                scanf("%d", &end);
+
+                printf("\n\v");
+                printf("\t\tThe Odd number from %d to %d are as follow: \n", start, end);
+                printf("\t\t\t\t=>");
+                printOdd(start, end);
+            }
         }
     }
 }
+
 /*
    --Function Defination--
 */
 int Even(int number)
 {
-	if (number % 2 == 0)
-		return 1;
-	else
-		return 0;
+    if (number % 2 == 0)
+        return 1;
+    else
+        return 0;
 }
 void printEven(int start, int end)
 {
-	int i;
-	for (i = start; i <= end; i++)
-	{
-		int checker;
-		checker = Even(i);
-		if (checker == 1)
-			printf("%d, ", i);
-	}
+    int i;
+    for (i = start; i <= end; i++)
+    {
+        int checker;
+        checker = Even(i);
+        if (checker == 1)
+            printf("%d, ", i);
+    }
 }
 void printOdd(int start, int end)
 {
-	int i;
-	for (i = start; i <= end; i++)
-	{
-		int checker;
-		checker = Even(i);
-		if (checker == 0)
-			printf("%d, ", i);
-	}
+    int i;
+    for (i = start; i <= end; i++)
+    {
+        int checker;
+        checker = Even(i);
+        if (checker == 0)
+            printf("%d, ", i);
+    }
 }
